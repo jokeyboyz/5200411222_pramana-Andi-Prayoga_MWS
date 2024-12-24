@@ -54,8 +54,8 @@ class CustomersController extends Controller {
           return Response.json({});
      }
 
-     Future<Response> edit(int cust_id) async {
-      final customers = await Customers().query().where('cust_id', '=', cust_id).first();
+     Future<Response> edit(int custId) async {
+      final customers = await Customers().query().where('cust_id', '=', custId).first();
         if (customers == null) {
             return Response.json({
                 "message": "Customer not found"
@@ -72,8 +72,8 @@ class CustomersController extends Controller {
           return Response.json({});
      }
 
-     Future<Response> destroy(int cust_id) async {
-      final customers = await Customers().query().where('cust_id', '=', cust_id).first();
+     Future<Response> destroy(int custId) async {
+      final customers = await Customers().query().where('cust_id', '=', custId).first();
         if (customers == null) {
             return Response.json({
                 "message": "Customer not found"
@@ -81,7 +81,7 @@ class CustomersController extends Controller {
         }
 
         // Hapus data
-        await Customers().query().where('cust_id', '=', cust_id).delete();
+        await Customers().query().where('cust_id', '=', custId).delete();
 
         return Response.json({
             "message": "Customer deleted successfully"

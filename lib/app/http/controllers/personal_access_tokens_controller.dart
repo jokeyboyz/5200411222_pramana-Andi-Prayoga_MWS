@@ -1,6 +1,6 @@
 import 'package:vania/vania.dart';
 
-class ProductnotesController extends Controller {
+class PersonalAccessTokensController extends Controller {
 
      Future<Response> index() async {
           return Response.json({'message':'Hello World'});
@@ -31,5 +31,5 @@ class ProductnotesController extends Controller {
      }
 }
 
-final ProductnotesController productnotesController = ProductnotesController();
+final PersonalAccessTokensController personalAccessTokensController = PersonalAccessTokensController();
 
